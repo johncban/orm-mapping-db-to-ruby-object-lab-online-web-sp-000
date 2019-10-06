@@ -116,11 +116,11 @@ class Student
   end
 
   def self.all_students_in_grade_X(grade)
-    sql = <<-SQL 
-      SELECT * 
-      FROM students 
+    sql = <<-SQL
+      SELECT *
+      FROM students
       WHERE grade = ?
-      ORDER BY students.id 
+      ORDER BY students.id
     SQL
 
     DB[:conn].execute(sql, grade).map do |row|
